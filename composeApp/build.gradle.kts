@@ -23,9 +23,12 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.androidx.compose)
+            implementation(libs.voyager.koin)
         }
         commonMain.dependencies {
             implementation(libs.koin.core)
+            implementation(libs.voyager.navigator)
+            implementation(libs.voyager.screenmodel)
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)

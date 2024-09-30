@@ -23,6 +23,7 @@ kotlinx-coroutines = "1.9.0"
 kotlinx-datetime = "0.6.0"
 kotlinx-serialization = "1.7.1"
 skie = "0.9.0"
+voyager = "1.1.0-alpha04"
 
 androidx-lifecycle = "2.8.0"
 
@@ -49,6 +50,9 @@ kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
 skie-annotations = { group = "co.touchlab.skie", name = "configuration-annotations", version.ref = "skie" }
+voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager" }
+voyager-screenmodel = { group = "cafe.adriel.voyager", name = "voyager-screenmodel", version.ref = "voyager" }
+voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
