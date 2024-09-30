@@ -7,7 +7,7 @@ fun initKoin(
   consumerDeclaration: KoinAppDeclaration = {},
 ) = startKoin {
   consumerDeclaration()
-  modules(platformModule(),)
+  modules(platformModule(), sharedModule())
 }
 
 fun initKoin() = initKoin {}
