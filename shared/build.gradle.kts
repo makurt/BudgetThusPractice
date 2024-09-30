@@ -4,6 +4,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinxSerialization)
+    alias(libs.plugins.skie)
 }
 
 kotlin {
@@ -26,8 +28,23 @@ kotlin {
     }
     
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.kotlinx.coroutines.android)
+            implementation(libs.skie.annotations)
+        }
+        iosMain.dependencies {
+            implementation(libs.skie.annotations)
+        }
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            implementation(libs.arrow.core)
+            implementation(libs.arrow.coroutines)
+            implementation(libs.firebase.firestore)
+            implementation(libs.kermit)
+            implementation(libs.keyvalue)
+            implementation(libs.koin.core)
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.datetime)
+            implementation(libs.kotlinx.serialization.json)
         }
     }
 }
