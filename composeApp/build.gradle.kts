@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -76,6 +75,21 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    signingConfigs {
+        getByName("debug") {
+            storeFile = file("../release/debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+
+        create("release") {
+            storeFile = file("../release/debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
     }
     dependencies {
         debugImplementation(compose.uiTooling)
