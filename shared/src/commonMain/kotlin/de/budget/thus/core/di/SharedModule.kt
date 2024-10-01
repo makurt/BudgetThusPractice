@@ -6,5 +6,5 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 fun sharedModule() = module {
-  factory { UbLoggerImpl() } bind UbLogger::class
+    factory { UbLoggerImpl() } bind UbLogger::class
 }

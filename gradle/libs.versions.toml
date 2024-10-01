@@ -13,6 +13,9 @@ androidx-test-junit = "1.2.1"
 arrow = "1.2.4"
 compose = "1.7.2"
 compose-plugin = "1.6.11"
+detekt = "1.23.6"
+detektFormatting = "1.23.6"
+detektCompose = "0.3.13"
 firebase = "1.12.0"
 junit = "4.13.2"
 kermit = "2.0.4"
@@ -22,6 +25,7 @@ kotlin = "2.0.10"
 kotlinx-coroutines = "1.9.0"
 kotlinx-datetime = "0.6.0"
 kotlinx-serialization = "1.7.1"
+ktlintCli = "1.2.1"
 skie = "0.9.0"
 voyager = "1.1.0-alpha04"
 
@@ -37,9 +41,12 @@ arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
 arrow-coroutines = { group = "io.arrow-kt", name = "arrow-fx-coroutines", version.ref = "arrow" }
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
+detekt-compose = { module = "io.nlopez.compose.rules:detekt", version.ref = "detektCompose" }
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detektFormatting" }
 firebase-firestore = { group = "dev.gitlive", name = "firebase-firestore", version.ref = "firebase" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 kermit = { group = "co.touchlab", name = "kermit", version.ref = "kermit" }
+ktlint-cli = { module = "com.pinterest.ktlint:ktlint-cli", version.ref = "ktlintCli" }
 keyvalue = { group = "com.russhwolf", name = "multiplatform-settings", version.ref = "keyvalue" }
 koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
@@ -59,6 +66,7 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 skie = { id = "co.touchlab.skie", version.ref = "skie" }
