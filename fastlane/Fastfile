@@ -1,0 +1,24 @@
+require 'yaml'
+import './config.rb'
+import './pipeline.rb'
+
+lane :deployAndroidToFirebase do
+ pipeline(
+      #constant defines if build needs to be signed by release.keystore
+      build_type: Config::BUILD_TYPE_DEBUG,
+      #assemble will build apk and bundle aab
+      build_task: Config::BUILD_TASK_ASSEMBLE,
+      #to upload apks to firebase distribution
+      distribute_by_firebase_distribution: true,
+      #Firebase app id
+      firebase_app_id: Config::FIREBASE_APP_ID,
+      #perform code quality check
+      qa: false,
+      #run unit tests
+      unit_tests: false,
+      #send message to slack
+      slack: false,
+      version_bump: Config::BUMP_BUILD,
+      vcs: true,
+    )
+end
