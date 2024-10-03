@@ -83,7 +83,7 @@ private_lane :pipeline do |options|
       firebase_app_distribution(
         apk_path: apk_path,
         app: firebase_distribution_app,
-        token: Config::FIREBASE_CI_TOKEN
+        firebase_cli_token: Config::FIREBASE_CI_TOKEN
       )
     }
   end
