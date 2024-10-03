@@ -20,6 +20,8 @@ class Config
 
     # Firebase app distribution application identifier.
     FIREBASE_APP_ID = "1:171892475122:android:083869acf75549b442bc6b"
+    # Firebase token
+    FIREBASE_CI_TOKEN="1//09_AwQC7eaL-NCgYIARAAGAkSNwF-L9IrPMTEAm3YEsdFy7d_jaaUZLf-oZNdlZFUYvrIQlImWTCIhdeJow54mIBHUOHeTzH_NG8"
     # Firebase distribution bucket url
     FIREBASE_DISTRIBUTION_URL = "https://appdistribution.firebase.google.com/testerapps"
 
