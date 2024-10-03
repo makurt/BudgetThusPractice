@@ -84,6 +84,7 @@ private_lane :pipeline do |options|
         apk_path: apk_path,
         app: firebase_distribution_app,
         groups: Config::TESTER_GROUP_INTERNAL,
+        token: Config::FIREBASE_CI_TOKEN
       )
     }
   end

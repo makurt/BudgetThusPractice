@@ -15,7 +15,7 @@ lane :deployAndroidToFirebase do
       #perform code quality check
       qa: false,
       #run unit tests
-      unit_tests: false,
+      unit_tests: true,
       #send message to slack
       slack: false,
       version_bump: Config::BUMP_BUILD,
