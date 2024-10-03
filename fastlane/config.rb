@@ -18,8 +18,13 @@ class Config
     BUMP_MINOR = "incrementMinor"
     BUMP_MAJOR = "incrementMajor"
 
+    # Firebase app distribution application identifier.
+    FIREBASE_APP_ID = "1:171892475122:android:083869acf75549b442bc6b"
+    # Firebase distribution bucket url
+    FIREBASE_DISTRIBUTION_URL = "https://appdistribution.firebase.google.com/testerapps"
+
     # Project repository git url
-    GIT_REPO = "git@github.com:makurt/BudgetThusPractice.git" "git@github.com:makurt/BudgetThusPractice.git"
+    GIT_REPO = "git@github.com:makurt/BudgetThusPractice.git"
     GIT_REPO_TOKEN_URL_SUFFIX = "@github.com/makurt/BudgetThusPractice.git"
 
 end
