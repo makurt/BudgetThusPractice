@@ -78,6 +78,7 @@ kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 skie = { id = "co.touchlab.skie", version.ref = "skie" }
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 firebaseCrashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashPlugin" }
+budget-thus-android-plugin = { id = "budget.thus.android.versioning", version = "unspecified" }
 
 [bundles]
 firebase = [
