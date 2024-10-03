@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import versioning.Versioning
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -8,6 +9,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.googleServices)
     alias(libs.plugins.firebaseCrashlytics)
+    id(libs.plugins.budget.thus.android.plugin.get().pluginId)
 }
 
 kotlin {
@@ -36,8 +38,6 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            //implementation(libs.androidx.lifecycle.viewmodel)
-            //implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(projects.shared)
         }
     }
@@ -55,8 +55,8 @@ android {
         applicationId = "de.budget.thus"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = Versioning(project.rootDir.path).readVersion().versionCode
+        versionName = Versioning(project.rootDir.path).readVersion().versionName
     }
     packaging {
         resources {
