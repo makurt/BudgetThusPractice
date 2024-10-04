@@ -28,10 +28,12 @@ jobs:
       - name: build release
         run: ./gradlew assembleRelease
 
-      - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
         with:
-          appId: 1:171892475122:android:083869acf75549b442bc6b
-          token: 1//09_AwQC7eaL-NCgYIARAAGAkSNwF-L9IrPMTEAm3YEsdFy7d_jaaUZLf-oZNdlZFUYvrIQlImWTCIhdeJow54mIBHUOHeTzH_NG8
-          file: composeApp/build/outputs/apk/release/composeApp-release.apk
-          releaseNotes: ${{ inputs.release_notes }}
+          ruby-version: 3.0
+
+      - name: upload artifact to Firebase App Distribution
+        run: |
+          bundle install
+          bundle exec fastlane deployAndroidToFirebase
