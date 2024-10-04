@@ -33,9 +33,6 @@ jobs:
         with:
           ruby-version: 2.6
 
-      - name: Gem install bundller
-        run: gem install bundler
-
       - name: upload artifact to Firebase App Distribution
         run: |
           bundle install
