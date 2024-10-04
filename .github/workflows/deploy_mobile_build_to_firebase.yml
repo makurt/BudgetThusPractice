@@ -28,6 +28,11 @@ jobs:
       - name: build release
         run: ./gradlew assembleRelease
 
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+
       - name: Gem install bundller
         run: gem install bundler
 
