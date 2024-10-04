@@ -6,4 +6,34 @@ plugins {
     alias(libs.plugins.jetbrainsCompose) apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
+    alias(libs.plugins.googleServices) apply false
+    alias(libs.plugins.detekt)
+}
+
+val detektFormatting = libs.detekt.formatting
+val detektCompose = libs.detekt.compose
+val detektPlugin = libs.plugins.detekt.get().pluginId
+
+subprojects {
+  apply {
+    plugin(detektPlugin)
+    from("${rootProject.projectDir}/quality/quality.gradle")
+  }
+
+  detekt {
+    config.from(rootProject.files("config/detekt/detekt.yml"))
+  }
+
+  dependencies {
+    detektPlugins(detektFormatting)
+    detektPlugins(detektCompose)
+  }
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    compilerOptions {
+        freeCompilerArgs = listOf(
+            "-Xexpect-actual-classes", // Ignore expect/actual experimental state
+        )
+    }
 }
