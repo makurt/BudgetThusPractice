@@ -28,6 +28,9 @@ jobs:
       - name: build release
         run: ./gradlew assembleRelease
 
+      - name: Gem install bundller
+        run: gem install bundler
+
       - name: upload artifact to Firebase App Distribution
         run: |
           bundle install
