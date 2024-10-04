@@ -1,0 +1,25 @@
+name: Distribute mobile to firebase
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_notes:
+        type: string
+        required: true
+        default: 'Manual Debug Build'
+        description: 'New Release Notes'
+
+jobs:
+  build:
+    name: Building and distributing app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure GIT
+        run: |
+          git config --local user.email "github-actions@users.noreply.github.com"
+          git config --local user.name "github-actions"
+      - name: Distribute dev app
+        run: |
+          bundle install
+          bundle exec fastlane deployAndroidToFirebase
